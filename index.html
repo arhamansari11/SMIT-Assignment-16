@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+                        <!-- Starting Header. -->
+    <header>
+        <h1 onclick="clearAll()">
+            Local Storage
+        </h1>
+    </header>
+
+                        <!-- Starting Main. -->
+    <main>
+        <div class="details-rapper">
+                        <!-- Heading. -->
+            <h2>
+                Users Details
+            </h2>
+
+                        <!-- Result Section. -->
+            <div class="screen">
+                                                    <!-- HIDDEN FEATURES -->
+                        <!-- Generate List -->
+                <table id="table" class="hidden">
+                    <thead>
+                        <th>Sr. No</th>
+                        <th>User ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+
+                        <!-- SignUp Form. -->
+                <form class="hidden" id="addUser">
+                    <fieldset>
+                        <legend>Add User</legend>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">City:</label>
+                            <input type="text" id="address" name="address" required placeholder="Enter Your City">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" required placeholder="Enter Your Password">
+                        </div>
+                        <div class="form-group">
+                            <button id="signup" onclick="save()">Save</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                        <!-- Delete User. -->
+                <form id ="deleteUser" class="hidden">
+                    <fieldset class="delete">
+                        <legend>Delete User</legend>
+                        <div class="form-group">
+                            <label for="userId">User ID:</label>
+                            <input type="number" id="userId" name="userId" required placeholder="Enter Provided User ID">
+                        </div>
+                        <div class="form-group">
+                            <button onclick="deleteUser()">Delete</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                        <!-- Login Form. -->
+                <form action="login" class="hidden" id="loginForm">
+                    <fieldset class="login">
+                        <legend>Login</legend>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="emailL" name="email" required placeholder="Enter Your Email">
+                        </div>
+                            <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="passwordL" name="password" required placeholder="Enter Your Password">
+                        </div>
+                        <div class="form-group">
+                            <button onclick="login()">Login</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                        <!-- Update Form. -->
+                <form id="updateForm" class="hidden">
+                    <fieldset class="update">
+                        <legend>Updation Form</legend>
+                        <div class="form-group">
+                            <label for="userid">User ID</label>
+                            <input type="number" id="userIdU" name="userIdU" required placeholder="Enter Your Provided User ID">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="nameU" name="name" required placeholder="Enter Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">City:</label>
+                            <input type="text" id="addressU" name="address" required placeholder="Enter Your City">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="emailU" name="email" required placeholder="Enter Your Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="passwordU" name="password" required placeholder="Enter Your Password">
+                        </div>
+                        <div class="form-group">
+                            <button onclick="update()">Update</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+
+                        <!-- RESULT SECTION. -->
+
+                <div class="result" id="result">
+                    <div class="result-rapper">
+                        <p>
+                            Press Button To Perform Action.
+                        </p>
+                    </div>
+                </div>
+
+                        <!-- Button Section. -->
+                <div class="buttons">
+                    <button onclick="generateList()">Generate Users List</button>
+                    <button onclick="toggle()">Add User/SignUp</button>
+                    <button onclick="toggle3()">Delete User</button>
+                    <button onclick="toggle1()" id="logInButton">Login</button>
+                    <button onclick="toggle5()" class="hidden" id="logOutButton">LogOut</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
